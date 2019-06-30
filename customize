@@ -46,6 +46,7 @@ ln -nfs /var/spool/nagios/nagios.log /var/log/nagios_log
 ln -nfs /var/svc/log/pkgsrc-nullmailer:default.log /var/log/mail_log
 usermod -G nagios www
 mkdir /data || true
+mkdir -p /opt/local/etc/nagios/servers
 
 # Clean up
 echo "* Cleaning up."
