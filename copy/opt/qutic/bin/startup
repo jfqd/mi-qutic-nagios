@@ -1,0 +1,23 @@
+#!/usr/bin/bash
+
+# sleep a while
+sleep 10
+
+# are all volumes mounted?
+for MOUNTPOINT in $(/usr/bin/cat /etc/vfstab | /usr/bin/grep ' yes ' | /usr/bin/awk '{print $3}'); do
+  if [[ -z `/usr/sbin/mount | /usr/bin/grep "$MOUNTPOINT"` ]]; then
+    /usr/sbin/mount "$MOUNTPOINT"
+  fi
+done
+
+# restore settings
+HOSTNAME=$(/usr/bin/hostname)
+[[ -x /data/${HOSTNAME}/bin/restore ]] && /data/${HOSTNAME}/bin/restore
+
+# first time fetch
+if [[ ! -f /opt/local/pkg/pkg-vulnerabilities ]]; then
+  /opt/local/sbin/pkg_admin fetch-pkg-vulnerabilities
+fi
+
+# bye
+exit 0
