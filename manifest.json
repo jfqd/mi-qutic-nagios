@@ -24,6 +24,7 @@
     "nagios_allow":                 {"type": "text", "description": "ip addresses of the nagios server node, seperated by comma"},
     "logstash_redis":               {"type": "text", "description": "ip addresses of the logstash redis nodes, seperated by comma and including redis-protocoll"},
     "vfstab":                       {"type": "text", "description": "nfs mountpoint for vfstab-file"},
-    "apache_htpasswd":              {"type": "text", "description": "user:password for apache web interface"}
+    "apache_htpasswd":              {"type": "text", "description": "user:password for apache web interface"},
+    "nagios_report_email":          {"type": "text", "description": "nagios report email"}
   }
 }

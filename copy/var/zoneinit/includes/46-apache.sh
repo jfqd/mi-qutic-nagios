@@ -14,4 +14,11 @@ if mdata-get apache_htpasswd 1>/dev/null 2>&1; then
 fi
 
 svcadm enable -r svc:/pkgsrc/apache:default
+
+if mdata-get nagios_report_email 1>/dev/null 2>&1; then
+  email=$(mdata-get nagios_report_email)
+  sed -i 's#nagios@localhost#${email}#' /opt/local/etc/nagios/objects/contacts.cfg
+fi
+
 svcadm enable -r svc:/pkgsrc/nagios:default
+chown www:nagios /var/spool/nagios/rw/nagios.cmd
