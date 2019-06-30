@@ -43,6 +43,7 @@ echo "* Setup nagios";
 mkdir -p /var/run/nagios/
 chown nagios:nagios /var/run/nagios/
 ln -nfs /var/spool/nagios/nagios.log /var/log/nagios_log
+ln -nfs /var/svc/log/pkgsrc-nullmailer:default.log /var/log/mail_log
 
 # Clean up
 echo "* Cleaning up."
