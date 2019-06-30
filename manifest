@@ -1,0 +1,8 @@
+name="qutic-nagios"
+organization="qutic development"
+brand="nagios instance"
+version="20181018.0"
+description="qutic nagios image"
+homepage="https://github.com/jfqd/mi-qutic-nagios"
+users="root admin"
+base="80eb3464-7ec3-11e9-8365-c32736cdd54f"
