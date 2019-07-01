@@ -1,0 +1,4 @@
+#!/usr/bin/bash
+
+# restore settings
+[[ -x /data/nagios/bin/backup ]] && /data/nagios/bin/backup
