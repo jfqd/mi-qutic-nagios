@@ -11,8 +11,7 @@ for MOUNTPOINT in $(/usr/bin/cat /etc/vfstab | /usr/bin/grep ' yes ' | /usr/bin/
 done
 
 # restore settings
-HOSTNAME=$(/usr/bin/hostname)
-[[ -x /data/${HOSTNAME}/bin/restore ]] && /data/${HOSTNAME}/bin/restore
+[[ -x /data/nagios/bin/restore ]] && /data/nagios/bin/restore
 
 # first time fetch
 if [[ ! -f /opt/local/pkg/pkg-vulnerabilities ]]; then
